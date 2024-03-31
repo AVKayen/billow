@@ -19,21 +19,6 @@ export default function Home() {
         <Album key={album.id} album={album} size={100} />
       ))}
 
-      <br />
-      <p>
-        KAYENNE:<br />
-        -Add search bar [2 views: tracks and albums]<br />
-        -volume controls<br />
-        -track history<br />
-        -modify queue css<br />
-        -instant play buttons everywhere<br />
-        BE:<br />
-        -add db storing<br />
-        -cookie caching<br />
-        -better optimization of [fetching, caching, etc]<br />
-      </p>
-        LOSSLESS:<br />
-        -new stylesheet<br />
     </div>
   );
 }
