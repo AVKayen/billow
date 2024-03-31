@@ -1,0 +1,336 @@
+$bg-color: #222222
+$text-color-base: #f0f0f0
+$text-color-first: #a2d2ff
+$text-color-second: #cdb4db
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap')
+html
+    height: 100%
+
+body
+    background-color: $bg-color
+    font-family: 'Nunito Sans', sans-serif
+    font-size: 14px
+    line-height: 1.42857143
+    color: $text-color-first
+    margin: 0
+    padding: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+    position: relative
+    display: flex
+    flex-direction: column
+
+a
+    color: $text-color-first
+    text-decoration: none
+
+#top-bar
+    padding: 0px
+    text-align: center
+    display: flex
+    justify-content: space-between
+    flex: 0 0 50px
+    border-bottom: 1px solid $text-color-first
+    a
+        color: $text-color-first
+        text-decoration: none
+        padding: 0 10px
+        font-size: 32px
+        font-weight: 600
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+
+select
+    background-color: $bg-color
+    color: $text-color-first
+    border: 1px solid $text-color-first
+    padding: 5px
+    font-size: 14px
+    margin-right: 10px
+    margin: 0
+    cursor: pointer
+    outline: none
+    appearance: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    -ms-appearance: none
+    -o-appearance: none
+
+#cover_sel
+    display: flex
+    flex-direction: row
+    height: 100%
+    align-items: center
+
+
+#queue
+    display: flex
+    flex-direction: column
+    background-color: $bg-color
+    color: $text-color-first
+    padding: 10px
+    overflow: auto
+    width: fit-content
+    flex: 0.4
+    height: calc(100% - 20px)
+
+#tracklist
+    display: flex
+    flex-direction: column
+    flex: 1
+    background-color: $bg-color
+    color: $text-color-first
+    padding: 10px
+    padding-bottom: 0
+    .album
+        display: flex
+        flex-direction: row
+        gap: 10px
+        padding: 10px
+        .data
+            display: flex
+            flex-direction: column
+            width: calc(100% - 100px)
+            gap: 5px
+            .main
+                display: flex
+                flex-direction: column
+                gap: 10px
+            .secondary
+                display: flex
+                flex-direction: row
+                gap: 10px
+                align-items: center
+        img
+            border-radius: 5px
+        .artist
+            font-size: 24px
+            color: $text-color-second
+            margin: 0
+        .title
+            font-size: 36px
+            font-weight: 600
+            margin-top: 5px
+        .year
+            font-size: 12px
+            color: $text-color-second
+        .genres
+            font-size: 12px
+            color: $text-color-second
+            display: flex
+            gap: 5px
+            span
+                background-color: $text-color-first
+                color: $bg-color
+                padding: 5px
+                border-radius: 5px
+        button
+            background-color: $text-color-second
+            color: $bg-color
+            border: none
+            padding: 5px
+            border-radius: 5px
+            cursor: pointer
+            outline: none
+            aspect-ratio: 1
+            duration: 0.3s
+        button:hover
+            background-color: $text-color-first
+        .duration
+            color: $text-color-second
+            text-align: right
+    button
+        background-color: $text-color-second
+        color: $bg-color
+        border: none
+        padding: 5px
+        border-radius: 5px
+        cursor: pointer
+        outline: none
+        aspect-ratio: 1
+        duration: 0.3s
+        &:hover
+            background-color: $text-color-first
+    .tracklist
+        display: flex
+        flex-direction: column
+        gap: 10px
+        overflow: auto
+        padding: 10px
+        flex: 1
+        .track
+            display: grid
+            grid-template-columns: 2fr 1fr 0.5fr
+            width: calc(100% - 20px)
+            margin: 0
+            padding: 10px
+            box-shadow: 0 0 10px 0 rgba(80, 71, 86, 0.5)
+            border-radius: 5px
+            .duration
+                color: $text-color-second
+                text-align: right
+            .title
+                color: $text-color-first
+            .artist
+                color: $text-color-second
+                text-align: center
+            .duration
+                color: $text-color-second
+                text-align: right
+
+#mid
+    display: flex
+    flex-direction: row
+    background-color: $bg-color
+    color: $text-color-first
+    width: 100%
+    height: 100%
+    display: flex
+    flex: 1
+    overflow: auto
+    #album-list
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        background-color: $bg-color
+        color: $text-color-first
+        padding: 10px
+        overflow: auto
+        height: calc(100% - 20px)
+        flex: 1
+        align-content: flex-start
+        .album
+            display: flex
+            flex-direction: column
+            cursor: pointer
+            overflow: auto
+            margin-right: 10px
+            margin-bottom: 10px
+            img
+                width: 100%
+                height: auto
+                border-radius: 5px
+            .artist
+                font-size: 12px
+                color: $text-color-second
+                margin-top: 5px
+            .title
+                font-size: 16px
+                font-weight: 600
+                margin-top: 5px
+    #queue
+        display: flex
+        flex-direction: column
+        background-color: $bg-color
+        color: $text-color-first
+        padding: 10px
+        overflow: auto
+        width: fit-content
+        flex: 0.4
+        height: calc(100% - 20px)
+        #player
+            display: flex
+            flex-direction: column
+            gap: 10px
+            .cover
+                width: 100%
+                height: auto
+                border-radius: 5px
+            .title
+                font-size: 24px
+                font-weight: 600
+                margin: 0
+            .artist
+                font-size: 16px
+                color: $text-color-second
+                margin: 0
+            .time
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                gap: 10px
+                .current
+                    color: $text-color-second
+                .total
+                    color: $text-color-second
+            progress
+                width: 100%
+                height: 10px
+                appearance: none
+                -webkit-appearance: none
+                -moz-appearance: none
+                -ms-appearance: none
+                -o-appearance: none
+                background-color: $text-color-second
+                border-radius: 5px
+                &::-webkit-progress-bar
+                    background-color: $text-color-second
+                &::-webkit-progress-value
+                    background-color: $text-color-first
+                &::-moz-progress-bar
+                    background-color: $text-color-first
+                &:hover
+                    cursor: pointer
+                    
+            .controls
+                display: flex
+                flex-direction: row
+                gap: 10px
+                justify-content: center
+                button
+                    background-color: $bg-color
+                    color: $text-color-first
+                    border: none
+                    padding: 5px
+                    border-radius: 5px
+                    cursor: pointer
+                    outline: none
+                    aspect-ratio: 1
+                    duration: 0.3s
+                button:hover
+                    color: $text-color-second
+        #queue-list
+            display: flex
+            flex-direction: column
+            gap: 10px
+            overflow: auto
+            padding: 10px
+            .track
+                display: grid
+                grid-template-columns: 1fr 2fr 1fr 0.5fr 0.5fr 0.5fr
+                width: calc(100% - 20px)
+                margin: 0
+                padding: 10px
+                box-shadow: 0 0 10px 0 rgba(80, 71, 86, 0.5)
+                border-radius: 5px
+                gap: 10px
+                .title-artist-bloc
+                    display: flex
+                    flex-direction: column
+                    gap: 5px
+                    .title
+                        color: $text-color-first
+                        margin: 0
+                    .artist
+                        color: $text-color-second
+                        margin: 0
+                .duration
+                    color: $text-color-second
+                    text-align: right
+                img
+                    width: 100%
+                    height: auto
+                    border-radius: 5px
+                button
+                    background-color: $text-color-second
+                    color: $bg-color
+                    border: none
+                    padding: 5px
+                    border-radius: 5px
+                    cursor: pointer
+                    outline: none
+                    aspect-ratio: 1
+                    duration: 0.3s

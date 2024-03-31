@@ -1,41 +1,39 @@
-import type { MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { LoaderFunction } from "@remix-run/node";
+import { API } from "~/constants";
+import { AlbumShort } from "~/types";
+import Album from "~/components/Album";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+export const loader: LoaderFunction = async () => {
+  const response = await fetch(`${API}/albums`);
+  const data: AlbumShort[] = await response.json();
+  return data;
 };
 
-export default function Index() {
+export default function Home() {
+  const albums: AlbumShort[] = useLoaderData();
+
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div id="album-list">
+      {albums.map((album) => (
+        <Album key={album.id} album={album} size={100} />
+      ))}
+
+      <br />
+      <p>
+        KAYENNE:<br />
+        -Add search bar [2 views: tracks and albums]<br />
+        -volume controls<br />
+        -track history<br />
+        -modify queue css<br />
+        -instant play buttons everywhere<br />
+        BE:<br />
+        -add db storing<br />
+        -cookie caching<br />
+        -better optimization of [fetching, caching, etc]<br />
+      </p>
+        LOSSLESS:<br />
+        -new stylesheet<br />
     </div>
   );
 }
