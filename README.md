@@ -1,5 +1,6 @@
 # SixBillowNoise music player
-### A simple music player with SwiftSilver (link not here yet, private for now until modernization) backend
+### A simple music player with SwiftBillow (link not here yet, private for now until modernization) backend
+
 
 
 ### Goals:

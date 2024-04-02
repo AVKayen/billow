@@ -10,7 +10,7 @@ const Timer: React.FC<TimerProps> = ({ seconds }) => {
     
     const formattedTime = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 
-    return <div>{formattedTime}</div>;
+    return <>{formattedTime}</>;
 };
 
 export default Timer;

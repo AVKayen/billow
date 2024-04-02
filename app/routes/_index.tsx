@@ -12,7 +12,6 @@ export const loader: LoaderFunction = async () => {
 
 export default function Home() {
   const albums: AlbumShort[] = useLoaderData();
-
   return (
     <div id="album-list">
       {albums.map((album) => (

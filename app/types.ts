@@ -2,22 +2,19 @@ export interface AlbumShort {
   id: string;
   title: string;
   artist: string;
-  genres: string[];
-  year: number;
 };
 
 export interface Track {
-  album: string;
+  albumId: string;
   title: string;
   artist: string;
-  duration: number;
-  track_number: number;
-  path: string;
+  length: number;
+  trackNumber: number;
 };
 
 export interface AlbumFull extends AlbumShort {
-  path: string;
-  genre: string[];
   quality: string;
+  year: number;
+  genre: string;
   tracks: Track[];
 }

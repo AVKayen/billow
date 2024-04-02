@@ -9,10 +9,10 @@ function Track({ track }: { track: Track }) {
     const { addToQueue } = useContext(QueueContext)!;
     return (
         <div className="track">
-            <p className="title">{track.track_number}. {track.title}</p>
+            <p className="title">{track.trackNumber}. {track.title}</p>
             <p className="artist">{track.artist}</p>
             <div className="duration">
-                <p><Timer seconds={track.duration} /></p>
+                <p><Timer seconds={track.length} /></p>
                 <button onClick={() => addToQueue(track)}>
                     <Icon name="add" />
                 </button>
