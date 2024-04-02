@@ -106,7 +106,7 @@ const Player = () => {
                     <>
                         <audio ref={audioRef} autoPlay={isPlaying} />
                         <div className="track-info">
-                            <img className="cover" src={`${ALBUMS}/${currentTrack.albumId}/cover`}  alt={currentTrack.title} />
+                            <img className="cover" src={`${ALBUMS}${currentTrack.albumId}/cover`}  alt={currentTrack.title} />
                             <div className="title-artist-bloc">
                                 <p className="title">{currentTrack.title}</p>
                                 <p className="artist">{currentTrack.artist}</p>
@@ -135,7 +135,7 @@ const Player = () => {
                 <div id="queue-list">
                     {queue.map((item, index) => (
                         <div className="track" key={index}>
-                            <img className="cover" src={`${ALBUMS}/${item.albumId}/cover`} alt={item.title} />
+                            <img className="cover" src={`${ALBUMS}${item.albumId}/cover`} alt={item.title} />
                             <div className="title-artist-bloc">
                                 <p className="title">{item.title}</p>
                                 <p className="artist">{item.artist}</p>
